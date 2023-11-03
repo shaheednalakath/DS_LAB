@@ -1,0 +1,22 @@
+import pandas as pd
+movies=pd.read_csv('https://raw.githubusercontent.com/justmarkham/pandas-videos/master/data/imdb_1000.csv')
+print("dataframes of top rated movies")
+print(movies.head())
+print()
+print("different way to filter pandas data frames by columnn values")
+print("show onely movies with 200 min")
+print('1-for loop')
+booleans=[]
+for len in movies.duration:
+  if len >= 200:
+    booleans.append(True)
+  else:
+    booleans.append(False)
+is_long=pd.Series(booleans)
+print(is_long.head()) 
+print()
+print("boardcast")
+print(movies[movies.duration >=200])
+print()
+print("3 use loc method")
+print(movies.loc[movies.duration >= 200])   
